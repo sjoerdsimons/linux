@@ -113,6 +113,18 @@
 	};
 };
 
+&i2c0 {
+	pinctrl-names = "default";
+	pinctrl-0 = <&i2c_pins>;
+	clock-div = <1>;
+	status = "okay";
+
+	rtc@51 {
+		compatible = "nxp,pcf8563";
+		reg = <0x51>;
+	};
+};
+
 &mdio_bus {
 	phy15: ethernet-phy@f {
 		compatible = "ethernet-phy-id03a2.a411";
@@ -150,6 +162,13 @@
 };
 
 &pio {
+	i2c_pins: i2c-pins {
+		mux {
+			function = "i2c";
+			groups = "i2c0_0";
+		};
+	};
+
 	pcie_pins: pcie-pins {
 		mux {
 			function = "pcie";

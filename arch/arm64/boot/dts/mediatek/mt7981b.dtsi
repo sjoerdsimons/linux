@@ -185,11 +185,12 @@
 			status = "disabled";
 		};
 
-		i2c@11007000 {
+		i2c0: i2c@11007000 {
 			compatible = "mediatek,mt7981-i2c";
 			reg = <0 0x11007000 0 0x1000>,
 			      <0 0x10217080 0 0x80>;
 			interrupts = <GIC_SPI 136 IRQ_TYPE_LEVEL_HIGH>;
+			clock-div = <1>;
 			clocks = <&infracfg CLK_INFRA_I2C0_CK>,
 				 <&infracfg CLK_INFRA_AP_DMA_CK>,
 				 <&infracfg CLK_INFRA_I2C_MCK_CK>,
