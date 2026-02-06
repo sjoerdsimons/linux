@@ -229,7 +229,7 @@
 			status = "disabled";
 		};
 
-		spi@1100b000 {
+		spi1: spi@1100b000 {
 			compatible = "mediatek,mt7981-spi-ipm", "mediatek,spi-ipm";
 			reg = <0 0x1100b000 0 0x1000>;
 			interrupts = <GIC_SPI 141 IRQ_TYPE_LEVEL_HIGH>;
